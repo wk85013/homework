@@ -4,13 +4,24 @@ import java.util.*
 
 fun main(args: Array<String>) {
     var scanner: Scanner = Scanner(System.`in`)
-    print("Please enter number of tickets: ")
-    var tickets = scanner.nextInt()
-    print("How many round-trip tickets: ")
-    var roundtrip = scanner.nextInt()
+    var tickets = 0
+    var roundtrip = 0
+    do {
+        print("Please enter number of tickets: ")
+        tickets = scanner.nextInt()
+        print("How many round-trip tickets: ")
+        roundtrip = scanner.nextInt()
+        //when練習
+        when (tickets != -1 && roundtrip != -1) {
+            true -> {
+                val ticket: Ticket = Ticket(totalTicket = tickets, roundTrip = roundtrip)
+                ticket.Calculation()
+            }
+            false -> println("Finish buy ticket")
 
-    var ticket: Ticket = Ticket(totalTicket = tickets, roundTrip = roundtrip)
-    ticket.Calculation()
+        }
+
+    } while (tickets != -1 && roundtrip != -1)
 
 
 }
